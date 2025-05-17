@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main() {
+    
+    int vot,n;
+    cout<<"Cuantos votan: ";
+    cin>>vot; 
+    cout<<"Cuantos candidatos: ";
+    cin>>n;
+    
+    int votos[500];
+    int conteo[10]={0};
+    
+    cout<<"Ingrese los votos correspondientes (candidato 1 = 1) separados por espacio:"<<endl;
+    for (int i = 0; i < vot; i++) {
+        cin >> votos[i];
+        
+        conteo[votos[i]]++;
+        
+        if (i == 0) cout << "Votos ingresados: "; 
+        cout << votos[i] << " ";
+    }
+    
+    cout<<endl;
+    cout<<"RESULTADOS: "<<endl;
+    for(int i=1 ; i<=n ;i++){
+        cout<<"Candidato "<<i<<": "<<conteo[i]<<endl;
+    }
+        return 0;
+}
